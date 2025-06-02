@@ -80,13 +80,14 @@ export default function EventsPreview() {
   const sectionRef = useScrollAnimation();
 
   return (
-    <section ref={sectionRef} className="opacity-0">
-      <h2 className="text-2xl font-bold mb-4 text-gray-900">Upcoming Events</h2>
+    <section ref={sectionRef} className="opacity-0" style={{ background: '#97b0c0' }}>
+      <h2 className="text-2xl font-bold mb-4" style={{ color: '#00293f' }}>Upcoming Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event, idx) => (
           <div
             key={idx}
-            className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+            style={{ background: '#97b0c0', border: '2px solid #00293f' }}
+            className="rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
           >
             <div className="relative h-48 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10" />
@@ -101,25 +102,27 @@ export default function EventsPreview() {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="font-semibold text-lg text-gray-900 mb-2">{event.title}</h3>
-              <div className="text-sm text-gray-700 mb-3">{event.desc}</div>
+              <h3 className="font-semibold text-lg mb-2" style={{ color: '#00293f' }}>{event.title}</h3>
+              <div className="text-sm mb-3" style={{ color: '#00293f' }}>{event.desc}</div>
               <div className="flex flex-wrap gap-2 mb-3">
                 {event.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs"
+                    style={{ background: '#aef54e', color: '#00293f' }}
+                    className="px-2 py-0.5 rounded text-xs"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <div className="text-xs text-gray-600 mb-2">
+              <div className="text-xs mb-2" style={{ color: '#00293f' }}>
                 📍 {event.location} | ⏰ {event.time}
               </div>
-              <div className="text-xs text-gray-700 mb-3">{event.extra}</div>
+              <div className="text-xs mb-3" style={{ color: '#00293f' }}>{event.extra}</div>
               <a 
                 href={event.link} 
-                className="inline-block text-sm text-purple-700 hover:text-purple-900 font-medium transition-colors"
+                style={{ color: '#00293f' }}
+                className="inline-block text-sm font-medium transition-colors hover:underline"
               >
                 Learn More →
               </a>

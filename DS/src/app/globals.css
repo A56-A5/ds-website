@@ -10,7 +10,7 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--background);  
   --color-foreground: var(--foreground);
   --color-blue: var(--blue);
   --color-grey: var(--grey);
@@ -31,7 +31,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #97b0c0;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,4 +52,11 @@ body {
 
 .animate-fadeInUp {
   animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+  text-decoration: none !important;
 }
