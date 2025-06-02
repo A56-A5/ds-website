@@ -42,19 +42,9 @@ export default function VisionMission() {
 
         <div className="bg-white rounded-lg p-8 shadow-lg">
           <h2 className="text-2xl font-bold mb-6 text-purple-800">Department Highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">15+</div>
-              <div className="text-gray-600">Research Papers Published</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">95%</div>
-              <div className="text-gray-600">Placement Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">20+</div>
-              <div className="text-gray-600">Industry Partners</div>
-            </div>
+          <div className="flex flex-col items-center justify-center">
+            <div className="text-4xl font-bold text-purple-600 mb-2">59</div>
+            <div className="text-gray-600 text-lg">Students Enrolled</div>
           </div>
         </div>
       </main>
