@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <header className="relative bg-gradient-to-br from-purple-100 via-blue-50 to-white text-center py-20 flex flex-col items-center justify-center overflow-hidden">
+    <header className="relative bg-gradient-to-br from-purple-100 via-blue-50 to-white text-center py-20 flex flex-col items-center justify-center overflow-hidden transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fadeInUp">
       <div className="absolute inset-0 pointer-events-none opacity-30 bg-[radial-gradient(circle_at_60%_40%,rgba(168,85,247,0.2)_0%,transparent_70%)]"></div>
       <Image
         src="/ds_logo.png"

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="bg-purple-900 text-white px-6 py-4 flex justify-between items-center">
+    <nav className="bg-purple-900 text-white px-6 py-4 flex justify-between items-center transition-opacity duration-500 ease-in-out opacity-0 animate-fadeIn">
       <div className="flex items-center space-x-4">
         <Image
           src="/ds_logo.png"

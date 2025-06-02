@@ -2,17 +2,17 @@ export default function AboutSection() {
   return (
     <section className="mb-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div className="bg-green-100 rounded-lg p-8 flex flex-col items-center justify-center text-center">
-          <h2 className="text-2xl font-bold mb-4">Vision</h2>
-          <p>To be a premier technical institution that nurtures professionally competent and socially responsible data scientists through quality education, training, and research.</p>
+        <div className="bg-green-100 rounded-lg p-8 flex flex-col items-center justify-center text-center group relative min-h-[200px]">
+          <h2 className="text-2xl font-bold mb-4 transition-opacity duration-300 group-hover:opacity-0">Vision</h2>
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]">To be a premier technical institution that nurtures professionally competent and socially responsible data scientists through quality education, training, and research.</p>
         </div>
-        <div className="bg-blue-100 rounded-lg p-8 flex flex-col items-center justify-center text-center">
-          <h2 className="text-2xl font-bold mb-4">Mission</h2>
-          <p>To advance knowledge and innovation in data science through research, education, and community engagement.</p>
+        <div className="bg-blue-100 rounded-lg p-8 flex flex-col items-center justify-center text-center group relative min-h-[200px]">
+          <h2 className="text-2xl font-bold mb-4 transition-opacity duration-300 group-hover:opacity-0">Mission</h2>
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]">To advance knowledge and innovation in data science through research, education, and community engagement.</p>
         </div>
-        <div className="bg-gray-300 rounded-lg p-8 flex flex-col items-center justify-center text-center">
-          <h2 className="text-2xl font-bold mb-4">Core Values</h2>
-          <p>Integrity, Excellence, Collaboration, Innovation, and Social Responsibility.</p>
+        <div className="bg-gray-300 rounded-lg p-8 flex flex-col items-center justify-center text-center group relative min-h-[200px]">
+          <h2 className="text-2xl font-bold mb-4 transition-opacity duration-300 group-hover:opacity-0">Core Values</h2>
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]">Integrity, Excellence, Collaboration, Innovation, and Social Responsibility.</p>
         </div>
       </div>
 
