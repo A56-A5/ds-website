@@ -1,5 +1,6 @@
 'use client';
 import { useState } from "react";
+import { useTimelineAnimation } from '../hooks/useScrollAnimation';
 
 const eventsByYear = {
   2024: [
@@ -63,56 +64,67 @@ export default function Timeline() {
         <div className="absolute left-1/2 top-0 h-full w-1 bg-purple-300 -translate-x-1/2 z-0" />
         <ul className="space-y-12 relative z-10">
           {eventsByYear[year] && eventsByYear[year].length > 0 ? (
-            eventsByYear[year].map((event, idx) => (
-              <li key={idx} className="flex w-full min-h-[140px]">
-                {/* Left side */}
-                {idx % 2 === 0 ? (
-                  <div className="w-1/2 flex justify-end items-center">
-                    <div className="bg-white border border-purple-200 rounded-2xl shadow-lg p-6 min-w-[220px] max-w-xs">
-                      <div className="flex items-center justify-end mb-1">
-                        <span className="text-2xl mr-2">{event.icon}</span>
-                        <span className="font-bold text-purple-700">{event.date}</span>
+            eventsByYear[year].map((event, idx) => {
+              const isLeft = idx % 2 === 0;
+              const cardRef = useTimelineAnimation(isLeft);
+              
+              return (
+                <li key={idx} className="flex w-full min-h-[140px]">
+                  {/* Left side */}
+                  {isLeft ? (
+                    <div className="w-1/2 flex justify-end items-center">
+                      <div 
+                        ref={cardRef}
+                        className={`bg-white border border-purple-200 rounded-2xl shadow-lg p-6 min-w-[220px] max-w-xs transition-all duration-700 translate-x-[-100px] opacity-0`}
+                      >
+                        <div className="flex items-center justify-end mb-1">
+                          <span className="text-2xl mr-2">{event.icon}</span>
+                          <span className="font-bold text-purple-700">{event.date}</span>
+                        </div>
+                        <div className="font-semibold mb-1 text-right">{event.title}</div>
+                        <div className="text-sm text-gray-600 mb-2 text-right">{event.desc}</div>
+                        <div className="flex flex-wrap gap-2 mb-2 justify-end">
+                          {event.tags && event.tags.map((tag, i) => (
+                            <span key={i} className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs">{tag}</span>
+                          ))}
+                        </div>
+                        {event.link && <a href={event.link} className="text-xs text-blue-600 hover:underline float-right">More info</a>}
                       </div>
-                      <div className="font-semibold mb-1 text-right">{event.title}</div>
-                      <div className="text-sm text-gray-600 mb-2 text-right">{event.desc}</div>
-                      <div className="flex flex-wrap gap-2 mb-2 justify-end">
-                        {event.tags && event.tags.map((tag, i) => (
-                          <span key={i} className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs">{tag}</span>
-                        ))}
-                      </div>
-                      {event.link && <a href={event.link} className="text-xs text-blue-600 hover:underline float-right">More info</a>}
                     </div>
+                  ) : (
+                    <div className="w-1/2" />
+                  )}
+                  {/* Dot on the line */}
+                  <div className="w-0 flex flex-col items-center">
+                    <span className="block w-4 h-4 bg-purple-500 rounded-full border-4 border-white z-20" />
                   </div>
-                ) : (
-                  <div className="w-1/2" />
-                )}
-                {/* Dot on the line */}
-                <div className="w-0 flex flex-col items-center">
-                  <span className="block w-4 h-4 bg-purple-500 rounded-full border-4 border-white z-20" />
-                </div>
-                {/* Right side */}
-                {idx % 2 !== 0 ? (
-                  <div className="w-1/2 flex justify-start items-center">
-                    <div className="bg-white border border-purple-200 rounded-2xl shadow-lg p-6 min-w-[220px] max-w-xs">
-                      <div className="flex items-center justify-start mb-1">
-                        <span className="text-2xl mr-2">{event.icon}</span>
-                        <span className="font-bold text-purple-700">{event.date}</span>
+                  {/* Right side */}
+                  {!isLeft ? (
+                    <div className="w-1/2 flex justify-start items-center">
+                      <div 
+                        ref={cardRef}
+                        className={`bg-white border border-purple-200 rounded-2xl shadow-lg p-6 min-w-[220px] max-w-xs transition-all duration-700 translate-x-[100px] opacity-0`}
+                      >
+                        <div className="flex items-center justify-start mb-1">
+                          <span className="text-2xl mr-2">{event.icon}</span>
+                          <span className="font-bold text-purple-700">{event.date}</span>
+                        </div>
+                        <div className="font-semibold mb-1 text-left">{event.title}</div>
+                        <div className="text-sm text-gray-600 mb-2 text-left">{event.desc}</div>
+                        <div className="flex flex-wrap gap-2 mb-2 justify-start">
+                          {event.tags && event.tags.map((tag, i) => (
+                            <span key={i} className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs">{tag}</span>
+                          ))}
+                        </div>
+                        {event.link && <a href={event.link} className="text-xs text-blue-600 hover:underline">More info</a>}
                       </div>
-                      <div className="font-semibold mb-1 text-left">{event.title}</div>
-                      <div className="text-sm text-gray-600 mb-2 text-left">{event.desc}</div>
-                      <div className="flex flex-wrap gap-2 mb-2 justify-start">
-                        {event.tags && event.tags.map((tag, i) => (
-                          <span key={i} className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs">{tag}</span>
-                        ))}
-                      </div>
-                      {event.link && <a href={event.link} className="text-xs text-blue-600 hover:underline">More info</a>}
                     </div>
-                  </div>
-                ) : (
-                  <div className="w-1/2" />
-                )}
-              </li>
-            ))
+                  ) : (
+                    <div className="w-1/2" />
+                  )}
+                </li>
+              );
+            })
           ) : (
             <li className="text-center">No events for this year.</li>
           )}
