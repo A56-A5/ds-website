@@ -47,18 +47,19 @@ const departmentAwards = [
 
 export default function DepartmentAwards() {
   return (
-    <div className="bg-gray-50 text-black min-h-screen pt-20">
+    <div style={{ background: '#97b0c0' }} className="min-h-screen pt-20">
       <main className="max-w-6xl mx-auto py-10 px-4">
-        <h1 className="text-4xl font-bold mb-8 text-purple-900">Department Awards</h1>
+        <h1 className="text-4xl font-bold mb-8" style={{ color: '#00293f' }}>Department Awards</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {departmentAwards.map((ach, idx) => (
             <div
               key={idx}
-              className="bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+              style={{ background: '#97d655', border: '2.5px solid #00293f' }}
+              className="rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
             >
               <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00293f]/50 z-10" />
                 <img
                   src={ach.image}
                   alt={ach.title}
@@ -69,13 +70,14 @@ export default function DepartmentAwards() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2">{ach.title}</h3>
-                <div className="text-sm text-gray-700 mb-3">{ach.desc}</div>
+                <h3 className="font-semibold text-lg mb-2" style={{ color: '#00293f' }}>{ach.title}</h3>
+                <div className="text-sm mb-3" style={{ color: '#00293f' }}>{ach.desc}</div>
                 <div className="flex flex-wrap gap-2">
                   {ach.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs"
+                      style={{ background: '#00293f', color: '#97d655' }}
+                      className="px-2 py-0.5 rounded text-xs font-semibold"
                     >
                       {tag}
                     </span>

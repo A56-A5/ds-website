@@ -65,34 +65,36 @@ const Navbar = () => {
         <span className={`block w-7 h-1 bg-[#00293f] rounded transition-all duration-200 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
       </button>
       {/* Desktop menu */}
-      <div className="hidden md:flex items-center space-x-6">
+      <div className="hidden md:flex items-center space-x-4">
         <Link href="/" style={{ color: '#00293f', textDecoration: 'none' }} className="font-bold uppercase">Home</Link>
-        <div className="h-8 w-px bg-[#00293f]" />
-        {Object.entries(menuItems).map(([title, items]) => (
-          <div
-            key={title}
-            className="relative group"
-            onMouseEnter={() => setActiveDropdown(title)}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <button style={{ color: '#00293f', textDecoration: 'none' }} className="font-bold uppercase">
-              {title}
-            </button>
-            <div style={{ background: '#aef54e', border: '1.5px solid #00293f', borderRadius: '12px', boxShadow: '0 4px 16px 0 rgba(0,0,0,0.08)' }} className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-56 z-[1001] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="py-1" role="menu" aria-orientation="vertical">
-                {items.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    style={{ color: '#00293f', fontWeight: 'bold', textTransform: 'uppercase', textDecoration: 'none' }}
-                    className="block px-4 py-2 text-sm hover:bg-[#97b0c0] hover:text-white whitespace-nowrap transition-colors rounded-md"
-                    role="menuitem"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+        <div className="h-8 w-[2px] bg-[#00293f]" />
+        {Object.entries(menuItems).map(([title, items], index, array) => (
+          <div key={title} className="flex items-center">
+            <div
+              className="relative group"
+              onMouseEnter={() => setActiveDropdown(title)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button style={{ color: '#00293f', textDecoration: 'none' }} className="font-bold uppercase">
+                {title}
+              </button>
+              <div style={{ background: '#aef54e', border: '1.5px solid #00293f', borderRadius: '12px', boxShadow: '0 4px 16px 0 rgba(0,0,0,0.08)' }} className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-56 z-[1001] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-1" role="menu" aria-orientation="vertical">
+                  {items.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      style={{ color: '#00293f', fontWeight: 'bold', textTransform: 'uppercase', textDecoration: 'none' }}
+                      className="block px-4 py-2 text-sm hover:bg-[#97b0c0] hover:text-white whitespace-nowrap transition-colors rounded-md"
+                      role="menuitem"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
+            {index < array.length - 1 && <div className="h-8 w-[2px] bg-[#00293f] ml-4" />}
           </div>
         ))}
       </div>
