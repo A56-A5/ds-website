@@ -53,7 +53,20 @@ module.exports = {
       },
       transitionTimingFunction: {
         'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
-      }
+      },
+      colors: {
+        darkblue: {
+          DEFAULT: '#00293f',
+          75: '#00293fbf', // 75% opacity
+        },
+        green: {
+          DEFAULT: '#aef54e',
+          75: '#aef54ebf', // 75% opacity
+        },
+        bluegrey: {
+          DEFAULT: '#97b0c0',
+        },
+      },
     },
   },
   plugins: [],
