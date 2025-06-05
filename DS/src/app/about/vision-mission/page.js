@@ -4,7 +4,7 @@ import Footer from "@/app/components/Footer";
 export default function VisionMission() {
   return (
     <div style={{ background: '#97b0c0' }} className="min-h-screen pt-20">
-      <main className="max-w-4xl mx-auto py-10 px-4">
+      <main className="w-[75%] max-w-5xl mx-auto py-10 px-4">
         <h1 className="text-4xl font-bold mb-8" style={{ color: '#00293f' }}>VISION & MISSION</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Vision Card */}

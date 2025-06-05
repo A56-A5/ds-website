@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Infrastructure() {
   return (
     <div style={{ background: '#97b0c0' }} className="min-h-screen pt-20">
-      <main className="max-w-4xl mx-auto py-10 px-4">
+      <main className="w-[75%] max-w-5xl mx-auto py-10 px-4">
         <h1 className="text-4xl font-bold mb-8" style={{ color: '#00293f' }}>Infrastructure</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div style={{ background: '#00293f', border: '2px solid #aef54e', color: '#aef54e' }} className="rounded-xl p-8 w-full text-center shadow-lg">

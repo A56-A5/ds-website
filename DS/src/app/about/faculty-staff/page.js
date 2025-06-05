@@ -49,7 +49,7 @@ const facultyMembers = [
 export default function FacultyStaff() {
   return (
     <div style={{ background: '#97b0c0' }} className="min-h-screen pt-20">
-      <main className="max-w-4xl mx-auto py-10 px-4">
+      <main className="w-[75%] max-w-5xl mx-auto py-10 px-4">
         <h1 className="text-4xl font-bold mb-8" style={{ color: '#00293f' }}>Faculty & Staff</h1>
         {/* Head of Department Card */}
         <div className="flex flex-col items-center mb-12">
