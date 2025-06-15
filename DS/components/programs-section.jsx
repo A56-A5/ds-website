@@ -15,7 +15,7 @@ export function ProgramsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105 hover-lift">
             <CardHeader className="text-center pb-4">
               <GraduationCap className="h-16 w-16 text-cyan-600 mx-auto mb-4" />
               <CardTitle className="text-2xl text-slate-800">B.Tech Data Science</CardTitle>
@@ -36,7 +36,7 @@ export function ProgramsSection() {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105 hover-lift">
             <CardHeader className="text-center pb-4">
               <BookOpen className="h-16 w-16 text-cyan-600 mx-auto mb-4" />
               <CardTitle className="text-2xl text-slate-800">Research Programs</CardTitle>
@@ -56,7 +56,7 @@ export function ProgramsSection() {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-xl transition-shadow duration-300">
+          <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105 hover-lift">
             <CardHeader className="text-center pb-4">
               <Briefcase className="h-16 w-16 text-cyan-600 mx-auto mb-4" />
               <CardTitle className="text-2xl text-slate-800">Industry Training</CardTitle>

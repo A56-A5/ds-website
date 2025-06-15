@@ -28,7 +28,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-800 px-8 py-3"
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3"
             >
               <Play className="mr-2 h-5 w-5" />
               Watch Introduction

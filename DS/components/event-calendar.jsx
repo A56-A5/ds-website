@@ -1,15 +1,43 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { ChevronLeft, ChevronRight, CalendarIcon } from "lucide-react"
+import { ChevronLeft, ChevronRight, CalendarIcon, Search } from "lucide-react"
 
 export function EventCalendar({ events }) {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [selectedEvent, setSelectedEvent] = useState(null)
+  const [isSearchResults, setIsSearchResults] = useState(false)
+  const [searchResultMonths, setSearchResultMonths] = useState(new Map())
+
+  // Check if we're displaying search results
+  useEffect(() => {
+    // If we have a small number of events compared to the total, it's likely a search result
+    setIsSearchResults(events.length < 20) // Assuming we have more than 20 events total
+
+    // Create a map of months that have search results
+    if (events.length < 20) {
+      const months = new Map()
+      events.forEach((event) => {
+        const year = event.date.getFullYear()
+        const month = event.date.getMonth()
+        const key = `${year}-${month}`
+        if (!months.has(key)) {
+          months.set(key, { year, month })
+        }
+      })
+      setSearchResultMonths(months)
+
+      // If we have search results, set the current date to the first result's month
+      if (events.length > 0) {
+        const firstEvent = events[0]
+        setCurrentDate(new Date(firstEvent.date.getFullYear(), firstEvent.date.getMonth(), 1))
+      }
+    }
+  }, [events])
 
   // Get current year and month
   const currentYear = currentDate.getFullYear()
@@ -17,12 +45,60 @@ export function EventCalendar({ events }) {
 
   // Navigate to previous month
   const prevMonth = () => {
-    setCurrentDate(new Date(currentYear, currentMonth - 1, 1))
+    if (isSearchResults && searchResultMonths.size > 0) {
+      // Find the previous month with search results
+      const currentKey = `${currentYear}-${currentMonth}`
+      const prevKey = null
+      const prevEntry = null
+
+      // Convert the map to an array and sort it
+      const sortedMonths = Array.from(searchResultMonths.entries()).sort((a, b) => {
+        const [keyA, valueA] = a
+        const [keyB, valueB] = b
+        return valueA.year === valueB.year ? valueA.month - valueB.month : valueA.year - valueB.year
+      })
+
+      // Find the current month's index
+      const currentIndex = sortedMonths.findIndex(([key]) => key === currentKey)
+
+      if (currentIndex > 0) {
+        // Get the previous month with results
+        const [key, value] = sortedMonths[currentIndex - 1]
+        setCurrentDate(new Date(value.year, value.month, 1))
+      }
+    } else {
+      // Normal navigation
+      setCurrentDate(new Date(currentYear, currentMonth - 1, 1))
+    }
   }
 
   // Navigate to next month
   const nextMonth = () => {
-    setCurrentDate(new Date(currentYear, currentMonth + 1, 1))
+    if (isSearchResults && searchResultMonths.size > 0) {
+      // Find the next month with search results
+      const currentKey = `${currentYear}-${currentMonth}`
+      const nextKey = null
+      const nextEntry = null
+
+      // Convert the map to an array and sort it
+      const sortedMonths = Array.from(searchResultMonths.entries()).sort((a, b) => {
+        const [keyA, valueA] = a
+        const [keyB, valueB] = b
+        return valueA.year === valueB.year ? valueA.month - valueB.month : valueA.year - valueB.year
+      })
+
+      // Find the current month's index
+      const currentIndex = sortedMonths.findIndex(([key]) => key === currentKey)
+
+      if (currentIndex < sortedMonths.length - 1) {
+        // Get the next month with results
+        const [key, value] = sortedMonths[currentIndex + 1]
+        setCurrentDate(new Date(value.year, value.month, 1))
+      }
+    } else {
+      // Normal navigation
+      setCurrentDate(new Date(currentYear, currentMonth + 1, 1))
+    }
   }
 
   // Get days in month
@@ -151,6 +227,12 @@ export function EventCalendar({ events }) {
           <h2 className="text-2xl font-bold text-slate-800">
             {monthNames[currentMonth]} {currentYear}
           </h2>
+          {isSearchResults && (
+            <Badge className="ml-2 bg-cyan-100 text-cyan-800">
+              <Search className="h-3 w-3 mr-1" />
+              Search Results
+            </Badge>
+          )}
         </div>
         <div className="flex space-x-2">
           <Button variant="outline" size="sm" onClick={prevMonth}>

@@ -38,7 +38,7 @@ export function AboutSection() {
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+          <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover-lift">
             <CardContent className="pt-6">
               <Brain className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-slate-800 mb-2">AI & ML</h4>
@@ -46,7 +46,7 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+          <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover-lift">
             <CardContent className="pt-6">
               <Database className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-slate-800 mb-2">Big Data</h4>
@@ -54,7 +54,7 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+          <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover-lift">
             <CardContent className="pt-6">
               <TrendingUp className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-slate-800 mb-2">Analytics</h4>
@@ -62,7 +62,7 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+          <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 hover-lift">
             <CardContent className="pt-6">
               <Users className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
               <h4 className="text-xl font-semibold text-slate-800 mb-2">Industry Connect</h4>

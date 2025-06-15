@@ -58,7 +58,8 @@ export function StatsSection() {
           {stats.map((category, index) => (
             <Card
               key={index}
-              className={`${category.bgColor} text-white hover:scale-105 transition-transform duration-300`}
+              className={`${category.bgColor} text-white hover:scale-105 transition-all duration-300 hover-lift animate-slide-up`}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-6 text-center">{category.title}</h3>
