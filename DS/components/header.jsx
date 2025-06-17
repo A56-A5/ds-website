@@ -104,35 +104,6 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Previous Batches Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
-                PREVIOUS BATCHES <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/alumni" className="w-full">
-                    Alumni Directory
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/projects" className="w-full">
-                    Batch-wise Projects
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/placements" className="w-full">
-                    Placements History
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/testimonials" className="w-full">
-                    Testimonials
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
             {/* Achievements Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
