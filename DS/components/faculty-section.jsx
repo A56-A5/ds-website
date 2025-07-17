@@ -1,40 +1,33 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Mail, Linkedin, BookOpen } from "lucide-react"
+import { Mail } from "lucide-react"
+import Link from "next/link"
 
 export function FacultySection() {
   const faculty = [
     {
-      name: "Dr. Sarah Johnson",
+      name: "Dr. Vince Paul",
       position: "Head of Department",
-      specialization: "Machine Learning & AI",
       image: "/placeholder.svg?height=300&width=300",
-      email: "sarah.johnson@cce.edu",
-      publications: 45,
+      email: "vince.paul@cce.edu",
     },
     {
-      name: "Dr. Michael Chen",
-      position: "Associate Professor",
-      specialization: "Big Data Analytics",
+      name: "Ms. Sreetha E S",
+      position: "Deputy HOD",
       image: "/placeholder.svg?height=300&width=300",
-      email: "michael.chen@cce.edu",
-      publications: 38,
+      email: "sreetha.es@cce.edu",
     },
     {
-      name: "Dr. Priya Sharma",
-      position: "Assistant Professor",
-      specialization: "Natural Language Processing",
+      name: "Ms. Sreemol",
+      position: "HOD in charge",
       image: "/placeholder.svg?height=300&width=300",
-      email: "priya.sharma@cce.edu",
-      publications: 32,
+      email: "sreemol@cce.edu",
     },
     {
-      name: "Dr. James Wilson",
-      position: "Professor",
-      specialization: "Computer Vision",
+      name: "Ms. Athithya",
+      position: "Class Tutor",
       image: "/placeholder.svg?height=300&width=300",
-      email: "james.wilson@cce.edu",
-      publications: 52,
+      email: "athithya@cce.edu",
     },
   ]
 
@@ -61,34 +54,28 @@ export function FacultySection() {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-800 mb-2">{member.name}</h3>
-                <p className="text-cyan-600 font-medium mb-1">{member.position}</p>
-                <p className="text-gray-600 text-sm mb-4">{member.specialization}</p>
+                <p className="text-cyan-600 font-medium mb-4">{member.position}</p>
 
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <BookOpen className="h-4 w-4 mr-1" />
-                    <span>{member.publications} Publications</span>
-                  </div>
+                <div className="flex items-center justify-center mb-4">
+                  <Mail className="h-4 w-4 mr-2 text-cyan-600" />
+                  <span className="text-slate-600 text-sm">{member.email}</span>
                 </div>
 
-                <div className="flex space-x-2">
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <Mail className="h-4 w-4 mr-1" />
-                    Contact
-                  </Button>
-                  <Button size="sm" variant="outline">
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
-                </div>
+                <Button size="sm" variant="outline" className="w-full bg-transparent">
+                  <Mail className="h-4 w-4 mr-1" />
+                  Contact
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
-            View All Faculty Members
-          </Button>
+          <Link href="/about/faculty-staff">
+            <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700">
+              View All Faculty Members
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

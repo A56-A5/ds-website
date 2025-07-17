@@ -26,14 +26,14 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-cyan-300 transition-colors font-medium">
+          <nav className="hidden lg:flex items-center space-x-8">
+            <Link href="/" className="text-white hover:text-cyan-300 transition-colors font-medium text-sm">
               HOME
             </Link>
 
             {/* About Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none text-sm">
                 ABOUT <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
@@ -48,11 +48,6 @@ export function Header() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/about/infrastructure" className="w-full">
-                    Infrastructure
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
                   <Link href="/about/vision-mission" className="w-full">
                     Vision & Mission
                   </Link>
@@ -62,15 +57,10 @@ export function Header() {
 
             {/* Academics Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none text-sm">
                 ACADEMICS <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/academics/courses" className="w-full">
-                    Courses
-                  </Link>
-                </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
                   <Link href="/academics/curriculum" className="w-full">
                     Curriculum
@@ -86,56 +76,12 @@ export function Header() {
                     Timetable
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/academics/student-guide" className="w-full">
-                    Student Guide
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/academics/research" className="w-full">
-                    Research
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/academics/projects" className="w-full">
-                    Student Projects
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Previous Batches Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
-                PREVIOUS BATCHES <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/alumni" className="w-full">
-                    Alumni Directory
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/projects" className="w-full">
-                    Batch-wise Projects
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/placements" className="w-full">
-                    Placements History
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/previous-batches/testimonials" className="w-full">
-                    Testimonials
-                  </Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* Achievements Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none text-sm">
                 ACHIEVEMENTS <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
@@ -159,7 +105,7 @@ export function Header() {
 
             {/* Events Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none text-sm">
                 EVENTS <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
@@ -174,28 +120,8 @@ export function Header() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/events/workshops" className="w-full">
-                    Workshops & Seminars
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/events/conferences" className="w-full">
-                    Conferences
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
                   <Link href="/events/hackathons" className="w-full">
                     Hackathons
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/events/webinars" className="w-full">
-                    Webinars
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/events/annual-day" className="w-full">
-                    Annual Day / Fests
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -203,18 +129,13 @@ export function Header() {
 
             {/* Contact Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-white hover:text-cyan-300 transition-colors font-medium focus:outline-none text-sm">
                 CONTACT <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
                   <Link href="/contact/location" className="w-full">
-                    Location Map
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/contact/inquiry" className="w-full">
-                    Inquiry Form
+                    Location
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
@@ -226,8 +147,8 @@ export function Header() {
             </DropdownMenu>
           </nav>
 
-          {/* Mobile Navigation - move to right edge */}
-          <div className="md:hidden ml-auto">
+          {/* Mobile Navigation */}
+          <div className="lg:hidden ml-auto">
             <Button variant="ghost" size="icon" className="text-white hover:text-cyan-300" onClick={toggleMobileMenu}>
               <Menu className="h-6 w-6" />
             </Button>
@@ -237,7 +158,7 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-black bg-opacity-50" onClick={toggleMobileMenu}>
+        <div className="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50" onClick={toggleMobileMenu}>
           <div
             className="fixed inset-y-0 right-0 w-[280px] bg-slate-800 shadow-lg p-5 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
@@ -281,13 +202,6 @@ export function Header() {
                   Faculty & Staff
                 </Link>
                 <Link
-                  href="/about/infrastructure"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Infrastructure
-                </Link>
-                <Link
                   href="/about/vision-mission"
                   className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
                   onClick={toggleMobileMenu}
@@ -297,13 +211,6 @@ export function Header() {
               </MobileNavSection>
 
               <MobileNavSection title="ACADEMICS">
-                <Link
-                  href="/academics/courses"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Courses
-                </Link>
                 <Link
                   href="/academics/curriculum"
                   className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
@@ -324,58 +231,6 @@ export function Header() {
                   onClick={toggleMobileMenu}
                 >
                   Timetable
-                </Link>
-                <Link
-                  href="/academics/student-guide"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Student Guide
-                </Link>
-                <Link
-                  href="/academics/research"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Research
-                </Link>
-                <Link
-                  href="/academics/projects"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Student Projects
-                </Link>
-              </MobileNavSection>
-
-              <MobileNavSection title="PREVIOUS BATCHES">
-                <Link
-                  href="/previous-batches/alumni"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Alumni Directory
-                </Link>
-                <Link
-                  href="/previous-batches/projects"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Batch-wise Projects
-                </Link>
-                <Link
-                  href="/previous-batches/placements"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Placements History
-                </Link>
-                <Link
-                  href="/previous-batches/testimonials"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Testimonials
                 </Link>
               </MobileNavSection>
 
@@ -419,39 +274,11 @@ export function Header() {
                   Timeline
                 </Link>
                 <Link
-                  href="/events/workshops"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Workshops & Seminars
-                </Link>
-                <Link
-                  href="/events/conferences"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Conferences
-                </Link>
-                <Link
                   href="/events/hackathons"
                   className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
                   onClick={toggleMobileMenu}
                 >
                   Hackathons
-                </Link>
-                <Link
-                  href="/events/webinars"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Webinars
-                </Link>
-                <Link
-                  href="/events/annual-day"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Annual Day / Fests
                 </Link>
               </MobileNavSection>
 
@@ -461,14 +288,7 @@ export function Header() {
                   className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
                   onClick={toggleMobileMenu}
                 >
-                  Location Map
-                </Link>
-                <Link
-                  href="/contact/inquiry"
-                  className="block text-gray-300 hover:text-cyan-300 transition-colors py-2 pl-4"
-                  onClick={toggleMobileMenu}
-                >
-                  Inquiry Form
+                  Location
                 </Link>
                 <Link
                   href="/contact/office-hours"

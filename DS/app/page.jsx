@@ -2,7 +2,6 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { ProgramsSection } from "@/components/programs-section"
-import { StatsSection } from "@/components/stats-section"
 import { AchievementsGlimpse } from "@/components/achievements-glimpse"
 import { EventsGlimpse } from "@/components/events-glimpse"
 import { FacultySection } from "@/components/faculty-section"
@@ -23,18 +22,15 @@ export default function HomePage() {
         <ProgramsSection />
       </div>
       <div className="animate-slide-up animation-delay-400">
-        <StatsSection />
-      </div>
-      <div className="animate-slide-up animation-delay-500">
         <AchievementsGlimpse />
       </div>
-      <div className="animate-slide-up animation-delay-600">
+      <div className="animate-slide-up animation-delay-500">
         <EventsGlimpse />
       </div>
-      <div className="animate-slide-up animation-delay-700">
+      <div className="animate-slide-up animation-delay-600">
         <FacultySection />
       </div>
-      <div className="animate-slide-up animation-delay-800">
+      <div className="animate-slide-up animation-delay-700">
         <NewsSection />
       </div>
       <Footer />
