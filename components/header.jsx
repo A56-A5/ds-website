@@ -38,11 +38,6 @@ export function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-slate-800 border-slate-700 text-white">
                 <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
-                  <Link href="/about" className="w-full">
-                    About Department
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-slate-700 focus:bg-slate-700 cursor-pointer">
                   <Link href="/about/faculty-staff" className="w-full">
                     Faculty & Staff
                   </Link>
